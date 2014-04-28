@@ -2,13 +2,16 @@
 !include WinMessages.nsh
 !include FileFunc.nsh
 
-!define PRODUCT_NAME "${GAME_NAME}"
+!ifndef GAME_ID
+  !define GAME_ID thd
+!endif
+
 !ifdef GAME_ICON
   Icon "${GAME_ICON}"
 !else
   Icon "${NSISDIR}\Contrib\Graphics\Icons\modern-install.ico"
 !endif
-Name "${PRODUCT_NAME}"
+Name "Maotama Bootstrap"
 OutFile MaotamaBootstrap_${GAME_ID}.exe
 SetCompressor lzma
 RequestExecutionLevel user

@@ -18,3 +18,6 @@ rebuild: clean all
 
 MaotamaBootstrap.nsh: MaotamaWebInstaller.exe
 MaotamaBootstrap_$(target).nsi: MaotamaBootstrap.nsh
+
+MaotamaBootstrap_$(target).exe: MaotamaBootstrap.nsi
+	$(nsis) /DGAME_ID="$(target)" MaotamaBootstrap.nsi
